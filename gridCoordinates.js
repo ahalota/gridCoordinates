@@ -1,7 +1,7 @@
 //Very simple conversion of lat-lng to 1/4 degree equirectangular gridded coordinates.
 //TODO: Error handling. Paremeter to set grid interval.
 
-gfed.latLngToGrid = function(pIn){
+latLngToGrid = function(pIn){
 	var p = {lat: pIn.lat, lng: pIn.lng};
 	
 	//Special case to handle lng outside of (-180,180) range. 
@@ -14,7 +14,7 @@ gfed.latLngToGrid = function(pIn){
 	return {y:y,x:x};
 }
 
-gfed.gridToLatLng = function(p){
+gridToLatLng = function(p){
 	var lng =  (p.x/4)  - 179.875;
 	var lat = -(p.y/4)  + 89.875;
 	return {lat:lat,lng:lng};
